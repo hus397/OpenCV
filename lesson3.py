@@ -44,3 +44,40 @@ cv2.imshow('bilateralblurred', bilateralblurred)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
+import cv2
+
+pika = cv2.imread('pika.png', cv2.IMREAD_COLOR)
+
+cv2.imshow('pika3', pika)
+
+startpoint = (50,30)
+endpoint = (60,10)
+linethickness = 5
+linecolour = (150, 150, 150)
+line = cv2.line(pika, startpoint, endpoint, linecolour, linethickness)
+cv2.imshow('line', line)
+#rectangle
+startpoint2 = (50,50)
+endpoint2 = (100,100)
+rect = cv2.rectangle(pika, startpoint2, endpoint2, linecolour, linethickness)
+cv2.imshow('rect', rect)
+#if you want the rectangle to be filled with a colour, make rect thickness as -1 (applies for all cases)
+centre = (100,200)
+radius = 40
+thickness2 = -1
+circle = cv2.circle(pika, centre, radius, linecolour, thickness2)
+cv2.imshow('circle', circle)
+
+font = cv2.FONT_HERSHEY_SIMPLEX
+colour = (150, 150, 150)
+pos = (200, 200)
+thickness3 = 3
+fontscale = 1
+text = cv2.putText(pika, 'Hello!', pos, font, fontscale, colour, thickness3, cv2.LINE_AA)
+cv2.imshow('text', text)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+
